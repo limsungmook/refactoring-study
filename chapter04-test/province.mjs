@@ -59,7 +59,7 @@ export class Province {
   }
 
   get demandCost() {
-    let remainingDemand = this.demandCost;
+    let remainingDemand = this.demand;
     let result = 0;
     this.producers
       .sort((a, b) => a.cost - b.cost)
