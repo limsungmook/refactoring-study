@@ -20,4 +20,31 @@ describe("province", function () {
     expect(asia.shortfall).equal(-6);
     expect(asia.profit).equal(292);
   });
+
+  it("zero demand", function () {
+    // 수요가 없다
+    asia.demand = 0;
+    expect(asia.shortfall).equal(-25);
+    expect(asia.profit).equal(0);
+  });
+});
+
+describe("no producers", function () {
+  // 생산자가 없다.
+  let noProducers;
+  this.beforeEach(function () {
+    const data = {
+      name: "No producers",
+      producers: [],
+      demand: 30,
+      price: 20
+    };
+    noProducers = new Province(data);
+  });
+  it("shortfall", function () {
+    expect(noProducers.shortfall).equal(30);
+  });
+  it("profit", function () {
+    expect(noProducers.profit).equal(0);
+  });
 });
