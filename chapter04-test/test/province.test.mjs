@@ -1,10 +1,10 @@
 import { Province } from "../province.mjs";
-import assert from "assert";
 import { sampleProvinceData } from "../sampleProvinceData.mjs";
+import { expect } from "chai";
 
 describe("province", function () {
   it("shortfall", function () {
     const asia = new Province(sampleProvinceData());
-    assert.equal(asia.shortfall, 5);
+    expect(asia.shortfall).equal(5);
   });
 });
